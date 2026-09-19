@@ -113,7 +113,7 @@ footer{text-align:center; padding:36px 0; color:var(--text-muted); font-size:.82
 
 <nav>
   <div class="nav-inner">
-    <span class="brand" id="navName">Tu Nombre</span>
+    <span class="brand" id="navName">Martín Ortiz</span>
     <ul class="nav-links" id="navLinks">
       <li><a href="#inicio" class="active">Inicio</a></li>
       <li><a href="#estudios">Estudios</a></li>
@@ -130,14 +130,14 @@ footer{text-align:center; padding:36px 0; color:var(--text-muted); font-size:.82
   <section class="hero page active" id="inicio">
     <div class="hero-grid">
       <div class="avatar-wrap">
-        <div class="avatar" id="avatar">TN</div>
+        <div class="avatar" id="avatar">MO</div>
         <button class="avatar-edit" id="avatarEditBtn" title="Cambiar foto">✎</button>
         <input type="file" id="avatarInput" accept="image/*" style="display:none">
       </div>
       <div>
-        <div class="hero-role" id="heroRole">Estudiante de Ingeniería de Sistemas</div>
-        <h1 id="heroName">Tu Nombre</h1>
-        <p class="bio" id="heroBio">Escribe aquí una breve presentación: quién eres, qué te apasiona y qué buscas profesionalmente.</p>
+        <div class="hero-role" id="heroRole">Ingeniero de Sistemas — Octavo semestre</div>
+        <h1 id="heroName">Martín Ortiz</h1>
+        <p class="bio" id="heroBio">Estudiante de Ingeniería de Sistemas con manejo en el desarrollo de soluciones tecnológicas. Conocimientos en programación, desarrollo de software, bases de datos, redes y gestión de sistemas de información.</p>
         <div class="skills" id="skillsWrap"></div>
         <button class="editable-trigger" id="editProfileBtn">Editar información personal</button>
       </div>
@@ -208,8 +208,8 @@ const store=(k,v)=>{try{if(v===undefined)return JSON.parse(localStorage.getItem(
 const uid=()=>'id-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,9);
 
 let profile = store('pf_profile') || {
-  name:'Tu Nombre', role:'Estudiante de Ingeniería de Sistemas', bio:'Escribe aquí una breve presentación: quién eres, qué te apasiona y qué buscas profesionalmente.',
-  skills:['Programación','Ciberseguridad','Trabajo en equipo'], photo:null
+  name:'Martín Ortiz', role:'Ingeniero de Sistemas — Octavo semestre', bio:'Estudiante de Ingeniería de Sistemas con manejo en el desarrollo de soluciones tecnológicas. Conocimientos en programación, desarrollo de software, bases de datos, redes y gestión de sistemas de información.',
+  skills:['Programación','Desarrollo de software','Bases de datos','Redes','Gestión de sistemas de información'], photo:null
 };
 let education = store('pf_education') || [
   {id:uid(), inst:'Universidad Santiago de Cali (USC)', program:'Ingeniería de Sistemas', period:'2022 — presente', desc:'Anteproyecto de grado enfocado en detección de phishing con IA.'}
@@ -396,4 +396,3 @@ renderAll();
 </script>
 </body>
 </html>
-
