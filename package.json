@@ -1,11 +1,5 @@
 {
-  "dependencies": {
-    "dotenv": "^18.0.8",
-    "express": "^5.3.0",
-    "mongoose": "^9.11.2",
-    "mongosh": "^2.13.0"
-  },
-  "name": "programacion-web",
+  "name": "database",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,14 +10,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/martinorti/programacion-web.git"
+    "url": "git+https://github.com/Cristi4nDevv/DataBase.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/martinorti/programacion-web/issues"
+    "url": "https://github.com/Cristi4nDevv/DataBase/issues"
   },
-  "homepage": "https://github.com/martinorti/programacion-web#readme"
+  "homepage": "https://github.com/Cristi4nDevv/DataBase#readme",
+  "dependencies": {
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "mongoose": "^9.11.2"
+  }
 }

@@ -4,28 +4,34 @@ import { conectarDB } from "./config/db.js";
 import autoresRoutes from "./routes/autores.routes.js";
 import comicsRoutes from "./routes/comics.routes.js";
 
+// Crear aplicación Express
 const app = express();
 
-// Middleware: permite leer el cuerpo de las peticiones en formato JSON
+// Permitir recibir datos JSON
 app.use(express.json());
 
-// Ruta de prueba
+// Ruta principal de prueba
 app.get("/", (req, res) => {
-  res.json({ mensaje: "API de la Tienda de Cómics funcionando" });
+  res.json({
+    mensaje: "API de la Tienda de Cómics funcionando"
+  });
 });
 
-// Rutas de la API
+// Rutas de nuestra API
 app.use("/api/autores", autoresRoutes);
 app.use("/api/comics", comicsRoutes);
 
-// Middleware para rutas inexistentes
+// Manejar rutas inexistentes
 app.use((req, res) => {
-  res.status(404).json({ mensaje: "Ruta no encontrada" });
+  res.status(404).json({
+    mensaje: "Ruta no encontrada"
+  });
 });
 
+// Puerto del servidor
 const PORT = process.env.PORT || 3000;
 
-// Primero conectamos a la base de datos y luego levantamos el servidor
+// Conectar a MongoDB e iniciar servidor
 conectarDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);

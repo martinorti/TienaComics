@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Autor from "../models/Autor.js";
 
-// POST /api/autores  → crear un autor
+// Crear un autor
 export async function crearAutor(req, res) {
   try {
     const autor = await Autor.create(req.body);
@@ -11,7 +11,7 @@ export async function crearAutor(req, res) {
   }
 }
 
-// GET /api/autores  → listar todos los autores
+// Listar todos los autores
 export async function listarAutores(req, res) {
   try {
     const autores = await Autor.find().sort({ nombre: 1 });
@@ -21,7 +21,7 @@ export async function listarAutores(req, res) {
   }
 }
 
-// GET /api/autores/:id  → consultar un autor por su id
+// Buscar un autor por ID
 export async function obtenerAutor(req, res) {
   try {
     const { id } = req.params;
@@ -31,8 +31,11 @@ export async function obtenerAutor(req, res) {
     }
 
     const autor = await Autor.findById(id);
+
     if (!autor) {
-      return res.status(404).json({ mensaje: "Autor no encontrado" });
+      return res.status(404).json({
+        mensaje: "Autor no encontrado"
+      });
     }
 
     res.json(autor);
